@@ -9,26 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.User = void 0;
-const typeorm_1 = require("typeorm");
+exports.UserDto = void 0;
 const class_transformer_1 = require("class-transformer");
-let User = class User {
-};
-exports.User = User;
+class UserDto {
+}
+exports.UserDto = UserDto;
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    (0, class_transformer_1.Expose)(),
     __metadata("design:type", Number)
-], User.prototype, "id", void 0);
+], UserDto.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, class_transformer_1.Expose)(),
     __metadata("design:type", String)
-], User.prototype, "email", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_transformer_1.Exclude)(),
-    __metadata("design:type", String)
-], User.prototype, "password", void 0);
-exports.User = User = __decorate([
-    (0, typeorm_1.Entity)()
-], User);
-//# sourceMappingURL=user.entity.js.map
+], UserDto.prototype, "email", void 0);
+//# sourceMappingURL=user.dto.js.map
