@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
 const typeorm_1 = require("typeorm");
 const class_transformer_1 = require("class-transformer");
+const report_entity_1 = require("../reports/report.entity");
 let User = class User {
 };
 exports.User = User;
@@ -28,6 +29,10 @@ __decorate([
     (0, class_transformer_1.Exclude)(),
     __metadata("design:type", String)
 ], User.prototype, "password", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => report_entity_1.Report, (report) => report.user),
+    __metadata("design:type", Array)
+], User.prototype, "reports", void 0);
 exports.User = User = __decorate([
     (0, typeorm_1.Entity)()
 ], User);
