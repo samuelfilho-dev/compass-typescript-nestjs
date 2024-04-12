@@ -26,6 +26,13 @@ let ReportsService = class ReportsService {
         report.user = user;
         return this.repo.save(report);
     }
+    async changeApproval(id, approved) {
+        const report = await this.repo.findOne({ where: { id: parseInt(id) } });
+        if (!report)
+            throw new common_1.NotFoundException('Report Not Found');
+        report.approved = approved;
+        return this.repo.save(report);
+    }
 };
 exports.ReportsService = ReportsService;
 exports.ReportsService = ReportsService = __decorate([
